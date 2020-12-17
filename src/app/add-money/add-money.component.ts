@@ -25,12 +25,10 @@ export class AddMoneyComponent implements OnInit {
 
     if (this.addMoney.valid) {
       this.msg = "Success"
-      console.log('Success')
       this.router.navigateByUrl('/bank')
     }
     else {
       this.msg = "Try Again"
     }
   }
-
 }

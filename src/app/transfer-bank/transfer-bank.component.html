@@ -1,0 +1,40 @@
+<mat-card style="width: 45vw; margin-left: 5vw;" [style.backgroundColor]="'#ceb9e6'">
+    Transfer to Bank
+    <form [formGroup]="transBank" (ngSubmit)="SubmitForm(transBank)">
+        <div class="margin: 5%;">
+            <div class="form-group">
+                <label>IFSC</label>
+                <input type="text" class="form-control" formControlName="IFSC">
+                <p *ngIf="transBank.controls.IFSC.errors?.required &&  transBank.controls.IFSC.touched"
+                    class="alert alert-danger">This field is required!</p>
+                <p *ngIf="transBank.controls.IFSC.errors?.pattern &&  transBank.controls.IFSC.touched"
+                    class="alert alert-danger">Not Valid IFSC number</p>
+            </div>
+            <div class="form-group">
+                <label>Account Number</label>
+                <input type="text" class="form-control" formControlName="accNumber">
+                <p *ngIf="transBank.controls.accNumber.errors?.required &&  transBank.controls.accNumber.touched"
+                    class="alert alert-danger">This field is required!</p>
+                <p *ngIf="transBank.controls.accNumber.errors?.pattern &&  transBank.controls.accNumber.touched"
+                    class="alert alert-danger">Not Valid Account number</p>
+            </div>
+            <div class="form-group">
+                <label>User Name</label>
+                <input type="text" class="form-control" formControlName="userName">
+                <p *ngIf="transBank.controls.userName.errors?.required &&  transBank.controls.userName.touched"
+                    class="alert alert-danger">This field is required!</p>
+                <p *ngIf="transBank.controls.userName.errors?.pattern &&  transBank.controls.userName.touched"
+                    class="alert alert-danger">Not Valid User Name number</p>
+            </div>
+            <div class="form-group">
+                <label>Payment Amount</label>
+                <input type="text" class="form-control" formControlName="pAmount">
+                <p *ngIf="transBank.controls.pAmount.errors?.required &&  transBank.controls.pAmount.touched"
+                    class="alert alert-danger">This field is required!</p>
+                <p *ngIf="transBank.controls.pAmount.errors?.min &&  transBank.controls.pAmount.touched"
+                    class="alert alert-danger">Payment amount must be greater than 1</p>
+            </div>
+        </div>
+        <button type="submit">Pay</button>
+    </form>
+</mat-card>

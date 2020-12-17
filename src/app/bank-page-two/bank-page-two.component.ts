@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bank-page-two.component.css']
 })
 export class BankPageTwoComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit(): void {

@@ -19,6 +19,11 @@ import { MatRadioModule } from '@angular/material/radio';
 import { BankPageComponent } from './bank-page/bank-page.component'
 import { MatInputModule } from '@angular/material/input';
 import { BankPageTwoComponent } from './bank-page-two/bank-page-two.component';
+import { LogoutComponent } from './logout/logout.component';
+import { SessionExpiredComponent } from './session-expired/session-expired.component';
+import { TransferBankComponent } from './transfer-bank/transfer-bank.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { TransferUserComponent } from './transfer-user/transfer-user.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +38,11 @@ import { BankPageTwoComponent } from './bank-page-two/bank-page-two.component';
     HomeComponent,
     AddMoneyComponent,
     BankPageComponent,
-    BankPageTwoComponent
+    BankPageTwoComponent,
+    LogoutComponent,
+    SessionExpiredComponent,
+    TransferBankComponent,
+    TransferUserComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +53,7 @@ import { BankPageTwoComponent } from './bank-page-two/bank-page-two.component';
     MatCardModule,
     MatRadioModule,
     MatInputModule,
+    MatGridListModule,
     RouterModule.forRoot([
       { path: '', component: LoginComponent },
       { path: 'login', component: LoginComponent },
@@ -53,7 +63,8 @@ import { BankPageTwoComponent } from './bank-page-two/bank-page-two.component';
       { path: 'change', component: ChangePasswordComponent },
       { path: 'changeForm', component: ChangeFormComponent },
       { path: 'bank', component: BankPageComponent },
-      { path: 'bankTwo', component: BankPageTwoComponent }
+      { path: 'bankTwo', component: BankPageTwoComponent },
+      { path: 'logout', component: LogoutComponent }
     ]),
   ],
   providers: [],
