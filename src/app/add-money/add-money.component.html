@@ -1,0 +1,22 @@
+<mat-card style="width: 45vw; margin-left: 5vw;">
+    Add Money
+    <form [formGroup]="addMoney" (ngSubmit)="SubmitForm(addMoney)">
+        <div class="margin: 5%;">
+            <div class="form-group">
+                <mat-radio-group formControlName="rad">
+                    <mat-radio-button style="margin-right: 2%;" class="example-margin" value="card">Card</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="net">Net Banking</mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <div class="form-group">
+                <label>Amount</label>
+                <input type="text" class="form-control" formControlName="amount">
+                <p *ngIf="addMoney.controls.amount.errors?.required &&  addMoney.controls.amount.touched"
+                    class="alert alert-danger">This field is required!</p>
+                <p *ngIf="addMoney.controls.amount.errors?.min &&  addMoney.controls.amount.touched"
+                    class="alert alert-danger">The Amount is less than 2</p>
+            </div>
+        </div>
+        <button type="submit">Pay</button>
+    </form>
+</mat-card>

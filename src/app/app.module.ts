@@ -13,6 +13,12 @@ import { OtpChangeComponent } from './otp-change/otp-change.component';
 import { ChangeFormComponent } from './change-form/change-form.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
+import { AddMoneyComponent } from './add-money/add-money.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatRadioModule } from '@angular/material/radio';
+import { BankPageComponent } from './bank-page/bank-page.component'
+import { MatInputModule } from '@angular/material/input';
+import { BankPageTwoComponent } from './bank-page-two/bank-page-two.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +30,10 @@ import { RouterModule } from '@angular/router';
     ChangePasswordComponent,
     OtpChangeComponent,
     ChangeFormComponent,
-    HomeComponent
+    HomeComponent,
+    AddMoneyComponent,
+    BankPageComponent,
+    BankPageTwoComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +41,9 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     ReactiveFormsModule,
     MatDialogModule,
+    MatCardModule,
+    MatRadioModule,
+    MatInputModule,
     RouterModule.forRoot([
       { path: '', component: LoginComponent },
       { path: 'login', component: LoginComponent },
@@ -39,7 +51,9 @@ import { RouterModule } from '@angular/router';
       { path: 'home', component: HomeComponent },
       { path: 'forgot', component: ForgotPasswordComponent },
       { path: 'change', component: ChangePasswordComponent },
-      { path: 'changeForm', component: ChangeFormComponent }
+      { path: 'changeForm', component: ChangeFormComponent },
+      { path: 'bank', component: BankPageComponent },
+      { path: 'bankTwo', component: BankPageTwoComponent }
     ]),
   ],
   providers: [],
