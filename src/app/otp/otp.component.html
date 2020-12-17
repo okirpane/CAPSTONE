@@ -1,0 +1,9 @@
+<div>Your OTP</div>
+<div *ngIf="OTPmessage">
+    <h2 id="otp">
+        {{ OTPmessage }}
+    </h2>
+</div>
+<div>
+    <button mat-raised-button (click)="CopyToClipboard('otp')">Copy & Login</button>
+</div>

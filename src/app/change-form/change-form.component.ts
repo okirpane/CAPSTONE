@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-change-form',
+  templateUrl: './change-form.component.html',
+  styleUrls: ['./change-form.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class ChangeFormComponent implements OnInit {
   registerForm: FormGroup;
   msg: string;
   constructor(private formBuilder: FormBuilder) {}

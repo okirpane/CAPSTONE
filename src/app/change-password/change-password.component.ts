@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { OTPComponent } from '../otp/otp.component'
+import { OtpChangeComponent } from '../otp-change/otp-change.component'
 import { NgForm } from '@angular/forms';
 import {MatDialog } from '@angular/material/dialog'
 
 @Component({
-  selector: 'app-forgot-password',
-  templateUrl: './forgot-password.component.html',
-  styleUrls: ['./forgot-password.component.css']
-
+  selector: 'app-change-password',
+  templateUrl: './change-password.component.html',
+  styleUrls: ['./change-password.component.css']
 })
-export class ForgotPasswordComponent implements OnInit {
+export class ChangePasswordComponent implements OnInit {
   constructor(private dialog: MatDialog) { }
   submitForgotForm(form: NgForm) {
     console.log(form.value.email);
@@ -18,8 +17,9 @@ export class ForgotPasswordComponent implements OnInit {
   }
   onGen(){
     console.log ("This is happening")
-    this.dialog.open(OTPComponent);
+    this.dialog.open(OtpChangeComponent);
   }
   ngOnInit() {
   }
+
 }
