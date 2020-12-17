@@ -28,10 +28,12 @@
     </div>
 
     <div class="form-group">
-      <label>Address</label>
-      <input type="text" class="form-control" formControlName="address">
-      <p *ngIf="registerForm.controls.address.errors?.required &&  registerForm.controls.address.touched"
+      <label>Username</label>
+      <input type="text" class="form-control" formControlName="username">
+      <p *ngIf="registerForm.controls.username.errors?.required &&  registerForm.controls.username.touched"
         class="alert alert-danger">This field is required!</p>
+      <p *ngIf="registerForm.controls.username.errors?.pattern &&  registerForm.controls.password.touched"
+        class="alert alert-danger">Can't use numbers (1-9)</p>
     </div>
     <button type="submit">Sign Up</button>
   </form>

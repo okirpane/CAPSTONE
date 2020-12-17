@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ForgotPasswordComponent } from '../forgot-password/forgot-password.component'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-otp',
@@ -10,7 +11,9 @@ export class OTPComponent implements OnInit {
   OTPmessage: string = ""
   msgHideAndShow: boolean;
   textMessage: string;
-  constructor() {
+  constructor(
+    private router: Router,
+  ) {
     this.OTPmessage = this.genOTP()
   }
 
@@ -35,6 +38,7 @@ export class OTPComponent implements OnInit {
     window.getSelection().addRange(r);
     document.execCommand('copy');
     window.getSelection().removeAllRanges();
+    this.router.navigateByUrl('/login')
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-change-form',
@@ -9,13 +10,14 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class ChangeFormComponent implements OnInit {
   registerForm: FormGroup;
   msg: string;
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+  ) { }
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
-      emailId: ['', [Validators.required, Validators.minLength(12)]],
       password: ['', Validators.required],
       passwordConfirm: ['', Validators.required],
-      address: ['', Validators.required]
     });
   }
 
@@ -24,6 +26,7 @@ export class ChangeFormComponent implements OnInit {
 
     if (this.registerForm.valid) {
       this.msg = "Signup Successful"
+      this.router.navigateByUrl('/login')
     }
     else {
       this.msg = "Try again Later"

@@ -6,12 +6,14 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { MatDialogModule } from '@angular/material/dialog';
 import { OTPComponent } from './otp/otp.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { OtpChangeComponent } from './otp-change/otp-change.component';
 import { ChangeFormComponent } from './change-form/change-form.component';
+import { HomeComponent } from './home/home.component';
+import { RouterModule } from '@angular/router';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +23,8 @@ import { ChangeFormComponent } from './change-form/change-form.component';
     OTPComponent,
     ChangePasswordComponent,
     OtpChangeComponent,
-    ChangeFormComponent
+    ChangeFormComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +32,15 @@ import { ChangeFormComponent } from './change-form/change-form.component';
     FormsModule,
     ReactiveFormsModule,
     MatDialogModule,
+    RouterModule.forRoot([
+      { path: '', component: LoginComponent },
+      { path: 'login', component: LoginComponent },
+      { path: 'register', component: RegisterComponent },
+      { path: 'home', component: HomeComponent },
+      { path: 'forgot', component: ForgotPasswordComponent },
+      { path: 'change', component: ChangePasswordComponent },
+      { path: 'changeForm', component: ChangeFormComponent }
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent],
